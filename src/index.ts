@@ -17,13 +17,9 @@ app.use(cors());
 app.use(helmet());
 app.use(morgan(process.env.ENVIRONMENT === "PROD" ? "combined" : "dev"));
 
-app.get("/", (req, res) => {
-    res.send({
-        message: "Harshil Premjibhai Vaghani hoo",
-        rollNo: 420,
-        highlightsForThisAnimal: "steals bags from ASDA",
-    });
-});
+
+
+
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
