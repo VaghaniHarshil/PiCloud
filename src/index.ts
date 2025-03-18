@@ -5,6 +5,9 @@ import morgan from "morgan";
 import helmet from "helmet";
 import dotenv from "dotenv";
 
+// modules
+import FileRouter from "./controllers/file-controller";
+
 // global environment config
 dotenv.config();
 
@@ -18,6 +21,8 @@ app.use(helmet());
 app.use(morgan(process.env.ENVIRONMENT === "PROD" ? "combined" : "dev"));
 
 
+// api
+app.use('/api/file', FileRouter);
 
 
 
